@@ -55,7 +55,7 @@ class ProductCartController (private val productCartService: ProductCartService,
 			)
 		)])])
 	@GetMapping("/productCartByProduct/{productId}")
-	fun productsCartByProduct(@PathVariable("productId") productId: UUID): List<ProductCart> {
+	fun productsCartByProduct(@Parameter(description = "Id del producto a buscar", example="ced4e507-6fff-46f2-b722-59e497f30f05")@PathVariable("productId") productId: UUID): List<ProductCart> {
 		val p = productService.getProductById(productId)
 		return productCartService.getAllProductsCartByProduct(p)
 	}
@@ -83,7 +83,7 @@ class ProductCartController (private val productCartService: ProductCartService,
 			)
 		)])])
 	@GetMapping("/productCart/{productId}/{cartId}")
-	fun getProductCartsById(@PathVariable("productId") productId: UUID, @PathVariable("cartId") cartId: UUID):EntityModel<ProductCart>  {
+	fun getProductCartsById(@Parameter(description = "Id del carrito de compras a buscar", example="ced4e507-6fff-46f2-b722-59e497f30f05")@PathVariable("productId") productId: UUID,@Parameter(description = "Id  del carrito de compras a buscar", example="ced4e507-6fff-46f2-b722-59e497f30f05") @PathVariable("cartId") cartId: UUID):EntityModel<ProductCart>  {
 		val pk = ProductCartPK(cartId,productId)
 		val pc = productCartService.getProductCartById(pk)
 				val resource = EntityModel.of(pc);
@@ -180,7 +180,7 @@ class ProductCartController (private val productCartService: ProductCartService,
 		)])]
 	 )
 	@DeleteMapping("/productCart/{productId}/{cartId}")
-	fun deleteProductCartById(@PathVariable("productId") productId: UUID, @PathVariable("cartId") cartId: UUID) {
+	fun deleteProductCartById(@Parameter(description = "Id del producto del carrito de compras a eliminar", example="ced4e507-6fff-46f2-b722-59e497f30f05")@PathVariable("productId") productId: UUID,@Parameter(description = "Id  del carrito de compras a eliminar", example="ced4e507-6fff-46f2-b722-59e497f30f05") @PathVariable("cartId") cartId: UUID) {
 		productCartService.deleteProductCartById(ProductCartPK(cartId,productId))
 	}
 }

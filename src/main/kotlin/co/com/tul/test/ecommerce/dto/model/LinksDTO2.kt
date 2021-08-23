@@ -5,8 +5,8 @@ import io.swagger.v3.oas.annotations.media.Schema
 
 data class LinksDTO2 (
     @JsonProperty("all-productscart-by-product") 
-    val  allProductscartByProduct: HrefDTO,
+    val  allProductscartByProduct: HrefDTO?,
     @JsonProperty("all-productscart-by-cart") 
-    val  allProductscartByCart: HrefDTO,
-    val  self: HrefDTO
+    val  allProductscartByCart: HrefDTO?,
+    val  self: HrefDTO?
 )

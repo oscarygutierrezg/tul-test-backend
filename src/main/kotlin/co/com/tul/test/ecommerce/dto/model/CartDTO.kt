@@ -14,13 +14,16 @@ import co.com.tul.test.ecommerce.persistence.model.CartStatusType
 data class CartDTO (
 	
 	@Schema(description = "Id del carrito de compras de compras.", example = "a4731748-a79f-4b9d-970e-0417653fec5b")	
-	val id: String,
+	val id: String?,
 	@Schema(description = "Descuento del carrito de compras de compras.", example = "Tuerca")	
-	val descuento: Float,
+	val descuento: Float?,
 	@Schema(description = "Total del carrito de compras de compras.", example = "Tuerca")	
-	val total: Float,
+	val total: Float?,
 	@Schema(description = "Esatdi del carrito de compras de compras.", example = "Tuerca")	
 	val estado: CartStatusType?,
     @Schema(description = "Links asociados a los recursos carrito de compras.")
 	@JsonProperty("_links")
-	val  links: LinksDTO) 
+	val  links: LinksDTO?) {
+//	private constructor(): this(null,0F,0F,null,null)
+	
+}

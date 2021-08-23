@@ -36,6 +36,14 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>io.mockk</groupId>
+			<artifactId>mockk</artifactId>
+			<version></version>
+			<scope>test</scope>
+		</dependency>
+		
+		 testImplementation(":mockk:")
 	</dependencies>
 
 	<build>
