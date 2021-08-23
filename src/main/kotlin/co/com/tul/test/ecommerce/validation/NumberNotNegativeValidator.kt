@@ -5,8 +5,8 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 
-class NumberNotNegativeValidator : ConstraintValidator<NumberNotNegative, Float>{
+class NumberNotNegativeValidator : ConstraintValidator<NumberNotNegative,Int>{
 	
-	override fun isValid( value: Float,  context: ConstraintValidatorContext) : Boolean =  value >= 0;
+	override fun isValid( value: Int,  context: ConstraintValidatorContext) : Boolean =  value.toInt() >= 0;
 	
 }

@@ -1,0 +1,1048 @@
+{
+	"info": {
+		"_postman_id": "e1c6d4dc-ba4c-45df-8486-2a7288d0cf51",
+		"name": "Ecommerce TÜL-Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"var href = jsonData.href",
+							"postman.setEnvironmentVariable(\"productId\", href.split('/')[5]);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 24793812-dcb1-4686-b516-0aa96289aba2",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "country",
+						"value": "CO",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Host",
+						"value": "plataforma-test.bancofalabella.com.co",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "channel",
+						"value": "PF",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Commerce",
+						"value": "Banco",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Tuercas\",\n    \"sku\": \"12345566\",\n    \"descripcion\": \"Test\",\n    \"precio\": 100,\n    \"tipoProducto\": \"WITHOUT_DISCOUNT\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ecommerce/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ecommerce",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 24793812-dcb1-4686-b516-0aa96289aba2",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "country",
+						"value": "CO",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Host",
+						"value": "plataforma-test.bancofalabella.com.co",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "channel",
+						"value": "PF",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Commerce",
+						"value": "Banco",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Tuercas1\",\n    \"sku\": \"12345566\",\n    \"descripcion\": \"Test1\",\n    \"precio\": 100,\n    \"tipoProducto\": \"WITHOUT_DISCOUNT\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ecommerce/product/{{productId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ecommerce",
+						"product",
+						"{{productId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET product",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 24793812-dcb1-4686-b516-0aa96289aba2",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "country",
+						"value": "CO",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Host",
+						"value": "plataforma-test.bancofalabella.com.co",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "channel",
+						"value": "PF",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Commerce",
+						"value": "Banco",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/ecommerce/product/{{productId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ecommerce",
+						"product",
+						"{{productId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET products",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 24793812-dcb1-4686-b516-0aa96289aba2",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "country",
+						"value": "CO",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Host",
+						"value": "plataforma-test.bancofalabella.com.co",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "channel",
+						"value": "PF",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Commerce",
+						"value": "Banco",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/ecommerce/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ecommerce",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 24793812-dcb1-4686-b516-0aa96289aba2",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "country",
+						"value": "CO",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Host",
+						"value": "plataforma-test.bancofalabella.com.co",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "channel",
+						"value": "PF",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Commerce",
+						"value": "Banco",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ecommerce/product/{{productId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ecommerce",
+						"product",
+						"{{productId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"var href = jsonData.href",
+							"postman.setEnvironmentVariable(\"cartId\", href.split('/')[5]);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 24793812-dcb1-4686-b516-0aa96289aba2",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "country",
+						"value": "CO",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Host",
+						"value": "plataforma-test.bancofalabella.com.co",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "channel",
+						"value": "PF",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Commerce",
+						"value": "Banco",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"descuento\": 0,\n    \"total\":0,\n    \"estado\": \"CREATED\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ecommerce/cart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ecommerce",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"var href = jsonData.href",
+							"postman.setEnvironmentVariable(\"cartId\", href.split('/')[5]);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 24793812-dcb1-4686-b516-0aa96289aba2",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "country",
+						"value": "CO",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Host",
+						"value": "plataforma-test.bancofalabella.com.co",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "channel",
+						"value": "PF",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Commerce",
+						"value": "Banco",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"descuento\": 1,\n    \"total\":1,\n    \"estado\": \"CREATED\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ecommerce/cart/{{cartId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ecommerce",
+						"cart",
+						"{{cartId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 24793812-dcb1-4686-b516-0aa96289aba2",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "country",
+						"value": "CO",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Host",
+						"value": "plataforma-test.bancofalabella.com.co",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "channel",
+						"value": "PF",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Commerce",
+						"value": "Banco",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/ecommerce/cart/{{cartId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ecommerce",
+						"cart",
+						"{{cartId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "carts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 24793812-dcb1-4686-b516-0aa96289aba2",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "country",
+						"value": "CO",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Host",
+						"value": "plataforma-test.bancofalabella.com.co",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "channel",
+						"value": "PF",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Commerce",
+						"value": "Banco",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/ecommerce/cart/{{cartId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ecommerce",
+						"cart",
+						"{{cartId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cart",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"var href = jsonData.href",
+							"postman.setEnvironmentVariable(\"cartId\", href.split('/')[5]);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 24793812-dcb1-4686-b516-0aa96289aba2",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "country",
+						"value": "CO",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Host",
+						"value": "plataforma-test.bancofalabella.com.co",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "channel",
+						"value": "PF",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Commerce",
+						"value": "Banco",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ecommerce/cart/{{cartId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ecommerce",
+						"cart",
+						"{{cartId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "productCart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 24793812-dcb1-4686-b516-0aa96289aba2",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "country",
+						"value": "CO",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Host",
+						"value": "plataforma-test.bancofalabella.com.co",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "channel",
+						"value": "PF",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Commerce",
+						"value": "Banco",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cartId\": \"{{cartId}}\",\n    \"productId\": \"{{productId}}\",\n    \"cantidad\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ecommerce/productCart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ecommerce",
+						"productCart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "productCart",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 24793812-dcb1-4686-b516-0aa96289aba2",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "country",
+						"value": "CO",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Host",
+						"value": "plataforma-test.bancofalabella.com.co",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "channel",
+						"value": "PF",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Commerce",
+						"value": "Banco",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cartId\": \"{{cartId}}\",\n    \"productId\": \"{{productId}}\",\n    \"cantidad\": 9\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ecommerce/productCart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ecommerce",
+						"productCart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "productCart",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 24793812-dcb1-4686-b516-0aa96289aba2",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "country",
+						"value": "CO",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Host",
+						"value": "plataforma-test.bancofalabella.com.co",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "channel",
+						"value": "PF",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Commerce",
+						"value": "Banco",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/ecommerce/productCart/{{productId}}/{{cartId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ecommerce",
+						"productCart",
+						"{{productId}}",
+						"{{cartId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "productCartByProduct",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 24793812-dcb1-4686-b516-0aa96289aba2",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "country",
+						"value": "CO",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Host",
+						"value": "plataforma-test.bancofalabella.com.co",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "channel",
+						"value": "PF",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Commerce",
+						"value": "Banco",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/ecommerce/productCartByProduct/{{productId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ecommerce",
+						"productCartByProduct",
+						"{{productId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "productCartByCart",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 24793812-dcb1-4686-b516-0aa96289aba2",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "country",
+						"value": "CO",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Host",
+						"value": "plataforma-test.bancofalabella.com.co",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "channel",
+						"value": "PF",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Commerce",
+						"value": "Banco",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/ecommerce/productCartByCart/{{cartId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ecommerce",
+						"productCartByCart",
+						"{{cartId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "productCart",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 24793812-dcb1-4686-b516-0aa96289aba2",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "country",
+						"value": "CO",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Host",
+						"value": "plataforma-test.bancofalabella.com.co",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "channel",
+						"value": "PF",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Commerce",
+						"value": "Banco",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/ecommerce/productCart/{{productId}}/{{cartId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ecommerce",
+						"productCart",
+						"{{productId}}",
+						"{{cartId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -30,14 +30,8 @@ class CustomizedResponseEntityExceptionHandler : ResponseEntityExceptionHandler(
 		return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(CustomErrorResponse( Format.formadtTiem(Date()), HttpStatus.INTERNAL_SERVER_ERROR.value(),ex.message!!,servletWebRequest.getRequest().getRequestURL().toString()));
 	}
 	
-	@ExceptionHandler(value = [(Exception::class)])
-	fun exception(ex: Exception): ResponseEntity<CustomErrorResponse>  {
-	
-				return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(CustomErrorResponse( Format.formadtTiem(Date()), HttpStatus.INTERNAL_SERVER_ERROR.value(),ex.message!!,""));
-	}
-	
-	@ExceptionHandler(value = [(ProductNotFoundException::class)])
-	fun handleAllExceptions(ex: ProductNotFoundException,request: WebRequest): ResponseEntity<CustomErrorResponse>  {
+	@ExceptionHandler(value = [(ProductNotFoundException::class),(CartNotFoundException::class),(ProductCartNotFoundException::class)])
+	fun handleAllExceptions(ex: EcommerceException,request: WebRequest): ResponseEntity<CustomErrorResponse>  {
 		var servletWebRequest = request as ServletWebRequest
 		return ResponseEntity.status(ex.statusCode).body(CustomErrorResponse( Format.formadtTiem(Date()),ex.statusCode.value(),ex.reason,servletWebRequest.getRequest().getRequestURL().toString()));
 	}

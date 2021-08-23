@@ -11,7 +11,7 @@ interface ProductService {
 
     fun getAllProducts(): List<Product> 
 
-    fun getProductsById(productId: UUID): Product
+    fun getProductById(productId: UUID): Product
 	
     fun createProduct(product: Product): Product
 

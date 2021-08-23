@@ -17,6 +17,8 @@
 	<properties>
 		<java.version>11</java.version>
 		<kotlin.version>1.5.21</kotlin.version>
+		<springdoc-openapi-ui.version>1.5.10</springdoc-openapi-ui.version>
+		<springdoc-openapi-core.version>1.1.49</springdoc-openapi-core.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -48,6 +50,17 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+		<!-- Openapi -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>${springdoc-openapi-ui.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-kotlin</artifactId>
+			<version>${springdoc-openapi-ui.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

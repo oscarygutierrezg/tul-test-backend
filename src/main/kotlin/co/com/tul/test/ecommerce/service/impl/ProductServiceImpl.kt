@@ -16,7 +16,7 @@ class ProductServiceImpl(private val productRepository: ProductRepository) : Pro
 
     override fun getAllProducts(): List<Product> = productRepository.findAll()
 
-    override fun getProductsById(productId: UUID): Product = productRepository.findById(productId)
+    override fun getProductById(productId: UUID): Product = productRepository.findById(productId)
             .orElseThrow { ProductNotFoundException(HttpStatus.NOT_FOUND, NOT_FOUND_DESC) }
 
     override fun createProduct(product: Product): Product = productRepository.save(product)
@@ -25,11 +25,13 @@ class ProductServiceImpl(private val productRepository: ProductRepository) : Pro
         return if (productRepository.existsById(productId)) {
             productRepository.save(
                     Product(
-						 nombre= product.nombre,
+						id=productId,
+						nombre= product.nombre,
 					    sku= product.sku,
 					    descripcion= product.descripcion,
 					    precio= product.precio,
-					    tipoProducto= product.tipoProducto
+					    tipoProducto= product.tipoProducto,
+					    productCart= product.productCart,
                     )
             )
         } else throw ProductNotFoundException(HttpStatus.NOT_FOUND,NOT_FOUND_DESC )

@@ -11,16 +11,14 @@ import java.util.UUID
 import org.hibernate.annotations.GenericGenerator
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import co.com.tul.test.ecommerce.validation.NumberNotNegative
-import co.com.tul.test.ecommerce.validation.NumberNotNull
 import javax.persistence.OneToMany
 import co.com.tul.test.ecommerce.validation.FloatNumberNotNegative
 import co.com.tul.test.ecommerce.validation.FloatNumberNotNull
 import com.fasterxml.jackson.annotation.JsonIgnore
 
 @Entity
-@Table(name = "product")
-data class Product (
+@Table(name = "Cart")
+data class Cart (
 		@Id
 		@GeneratedValue(generator = "UUID")
 		@GenericGenerator(
@@ -29,29 +27,18 @@ data class Product (
 				)
 		@Column(name = "id", updatable = false, nullable = false)
 		val id: UUID? = UUID.randomUUID(),
-		@Column(name = "nombre", unique = false, nullable = false)
-		@field:NotNull
-		@field:NotEmpty
-		val nombre: String?,
-		@Column(name = "sku", nullable = false)
-		@field:NotNull
-		@field:NotEmpty
-		val sku: String?,
-		@Column(name = "descripcion", nullable = false)
-		@field:NotNull
-		@field:NotEmpty
-		val descripcion: String?,
-		@Column(name = "precio", nullable = false)
-		@field:NotNull
+		@Column(name = "descuento", nullable = false)
 		@field:FloatNumberNotNegative
-		@field:FloatNumberNotNull
-		val precio: Float,
-		@Column(name = "tipo_producto", nullable = false)
+		val descuento: Float,
+		@Column(name = "total", nullable = false)
+		@field:FloatNumberNotNegative
+		val total: Float,
+		@Column(name = "estado", nullable = false)
 		@field:NotNull
-		val tipoProducto: ProductType?,
-		@OneToMany(mappedBy = "cart")
+		val estado: CartStatusType?,
+		@OneToMany(mappedBy = "product")
 		@JsonIgnore
-		val productCart: List<ProductCart>?
+		val cartProduct: List<ProductCart>?
 		){
-	private constructor(): this(null,null,null,null,0F,null,null)
+	private constructor(): this(null,0F,0F,null,null)
 }

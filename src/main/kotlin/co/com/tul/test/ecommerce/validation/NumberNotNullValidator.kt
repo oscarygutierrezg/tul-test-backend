@@ -5,10 +5,9 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 
-class NumberNotNullValidator : ConstraintValidator<NumberNotNull, Float>{
+class NumberNotNullValidator : ConstraintValidator<NumberNotNull, Int>{
 	
-	override fun isValid( value: Float,  context: ConstraintValidatorContext) : Boolean {
-		println("Test "+(value != 0.0F))
-	 return  value != 0.0F;
+	override fun isValid( value: Int,  context: ConstraintValidatorContext) : Boolean {
+	 return  value != 0;
 	}
 }
