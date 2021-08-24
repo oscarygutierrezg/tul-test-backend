@@ -57,21 +57,6 @@ class ProductControllerTest @Autowired constructor() {
     private lateinit var productService: ProductServiceImpl
 	
 
-	//@Test
-	fun whenCalled_thenShouldReturnEmptyArray1() {
-		given(productRepository.findAll()).willThrow(RuntimeException())
-		given(productService.getAllProducts()).willThrow(RuntimeException())
-		val result = testRestTemplate.getForEntity("/product",CustomErrorResponse::class.java)
-		  Assertions.assertAll(
-                Executable { Assertions.assertNotNull(result) },
-                Executable { Assertions.assertEquals(HttpStatus.BAD_REQUEST, result?.statusCode) },
-              Executable { Assertions.assertEquals("Validation Failed descripcion no debe estar vacío ",result?.body?.error)
-				 }
-        )
-		
-	}
-	
-
 	@Test
 	fun whenCalled_thenShouldReturnEmptyArray() {
 		val result = testRestTemplate.getForEntity("/product", String::class.java)
@@ -156,6 +141,7 @@ class ProductControllerTest @Autowired constructor() {
 		targetRequest.put("sku", "12345566")
 		targetRequest.put("descripcion", "Test")
 		targetRequest.put("precio", 100)
+		targetRequest.put("porcentajeDescuento", 0)
 		targetRequest.put("nombre", "Tuercas")
 		targetRequest.put("tipoProducto", "WITHOUT_DISCOUNT")
 		
@@ -192,6 +178,7 @@ class ProductControllerTest @Autowired constructor() {
 		targetRequest.put("sku", "12345566")
 		targetRequest.put("descripcion", "")
 		targetRequest.put("precio", 100)
+		targetRequest.put("porcentajeDescuento", 0)
 		targetRequest.put("nombre", "Tuercas")
 		targetRequest.put("tipoProducto", "WITHOUT_DISCOUNT")
 		

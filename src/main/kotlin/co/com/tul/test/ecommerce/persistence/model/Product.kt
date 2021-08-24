@@ -46,6 +46,10 @@ data class Product (
 		@field:FloatNumberNotNegative
 		@field:FloatNumberNotNull
 		val precio: Float,
+		@Column(name = "porcentaje_descuento", nullable = false)
+		@field:NotNull
+		@field:FloatNumberNotNegative
+		val porcentajeDescuento: Float,
 		@Column(name = "tipo_producto", nullable = false)
 		@field:NotNull
 		val tipoProducto: ProductType?,
@@ -53,5 +57,5 @@ data class Product (
 		@JsonIgnore
 		val productCart: List<ProductCart>?
 		){
-	private constructor(): this(null,null,null,null,0F,null,null)
+	private constructor(): this(null,null,null,null,0F,0F,null,null)
 }

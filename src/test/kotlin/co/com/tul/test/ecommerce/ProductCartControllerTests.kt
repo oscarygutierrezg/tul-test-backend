@@ -79,6 +79,7 @@ class ProductCartControllerTests() {
 		targetRequest.put("sku", "12345566")
 		targetRequest.put("descripcion", "Test")
 		targetRequest.put("precio", 100)
+		targetRequest.put("porcentajeDescuento", 0)
 		targetRequest.put("nombre", "Tuercas")
 		targetRequest.put("tipoProducto", "WITHOUT_DISCOUNT")
 		
@@ -168,6 +169,7 @@ class ProductCartControllerTests() {
 		targetRequest.put("sku", "12345566")
 		targetRequest.put("descripcion", "Test")
 		targetRequest.put("precio", 100)
+		targetRequest.put("porcentajeDescuento", 0)
 		targetRequest.put("nombre", "Tuercas")
 		targetRequest.put("tipoProducto", "WITHOUT_DISCOUNT")
 		
@@ -236,6 +238,7 @@ class ProductCartControllerTests() {
 		targetRequest.put("sku", "12345566")
 		targetRequest.put("descripcion", "Test")
 		targetRequest.put("precio", 100)
+		targetRequest.put("porcentajeDescuento", 0)
 		targetRequest.put("nombre", "Tuercas")
 		targetRequest.put("tipoProducto", "WITHOUT_DISCOUNT")
 		

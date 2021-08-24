@@ -30,6 +30,7 @@ class ProductServiceImpl(private val productRepository: ProductRepository) : Pro
 					    sku= product.sku,
 					    descripcion= product.descripcion,
 					    precio= product.precio,
+						porcentajeDescuento= product.porcentajeDescuento,
 					    tipoProducto= product.tipoProducto,
 					    productCart= product.productCart,
                     )

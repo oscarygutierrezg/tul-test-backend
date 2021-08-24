@@ -11,14 +11,4 @@ class EcommerceApplication
 
 fun main(args: Array<String>) {
 	runApplication<EcommerceApplication>(*args)
-//	val  mapper =  ObjectMapper()
-//val rootNode = mapper.createObjectNode()
-//
-//		rootNode.put("nombre", "Tuercas")
-//		rootNode.put("sku", "12345566")
-//		rootNode.put("descripcion", "Test")
-//		rootNode.put("nombre", "Tuercas")
-//		rootNode.put("tipoProducto", "WITHOUT_DISCOUNT")
-//		
-//	 RestTemplate().postForLocation("/product", rootNode)
 }
