@@ -83,7 +83,7 @@
 			"response": []
 		},
 		{
-			"name": "product Copy",
+			"name": "product",
 			"event": [
 				{
 					"listen": "test",
@@ -731,7 +731,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/ecommerce/cart/{{cartId}}",
+					"raw": "http://localhost:8080/ecommerce/cart",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -739,8 +739,7 @@
 					"port": "8080",
 					"path": [
 						"ecommerce",
-						"cart",
-						"{{cartId}}"
+						"cart"
 					]
 				}
 			},
