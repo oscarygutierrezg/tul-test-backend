@@ -6,4 +6,7 @@ import co.com.tul.test.ecommerce.persistence.model.Product
 import java.util.UUID
 
 @Repository
-interface ProductRepository : JpaRepository<Product, UUID>
+interface ProductRepository : JpaRepository<Product, UUID>{
+	
+	fun getBySku(sku : String): List<Product>
+}

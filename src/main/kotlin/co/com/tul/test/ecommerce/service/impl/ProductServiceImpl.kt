@@ -15,6 +15,8 @@ class ProductServiceImpl(private val productRepository: ProductRepository) : Pro
     }
 
     override fun getAllProducts(): List<Product> = productRepository.findAll()
+    
+	override fun getBySku(sku: String): List<Product> = productRepository.getBySku(sku)
 
     override fun getProductById(productId: UUID): Product = productRepository.findById(productId)
             .orElseThrow { ProductNotFoundException(HttpStatus.NOT_FOUND, NOT_FOUND_DESC) }

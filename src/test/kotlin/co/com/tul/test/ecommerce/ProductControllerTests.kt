@@ -193,6 +193,42 @@ class ProductControllerTest @Autowired constructor() {
 		
 	}
 	
+		@Test
+	fun whenCalled_thenShouldReturnNotNull1() {
+		val headers = HttpHeaders()
+		
+		headers.setContentType(MediaType.APPLICATION_JSON)
+		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON))
+		
+		val  mapper =  ObjectMapper()
+		val targetRequest = mapper.createObjectNode()
+
+		targetRequest.put("nombre", "Test")
+		targetRequest.put("sku", "12345566")
+		targetRequest.put("descripcion", "treeeteretr")
+		targetRequest.put("precio", 100)
+		targetRequest.put("porcentajeDescuento", 0)
+		targetRequest.put("nombre", "Tuercas")
+		targetRequest.put("tipoProducto", "WITHOUT_DISCOUNT")
+		
+		val  request =  HttpEntity(targetRequest, headers);
+		val result = testRestTemplate.postForEntity("/product", request,LinkDTO::class.java)
+		  Assertions.assertAll(
+                Executable { Assertions.assertNotNull(result) },
+                Executable { Assertions.assertEquals(HttpStatus.CREATED, result?.statusCode) },
+			       Executable { Assertions.assertNotNull(result?.body?.href)
+				 }
+        )
+		
+		val result1 = testRestTemplate.getForEntity("/product/sku/12345566",String::class.java)
+		  Assertions.assertAll(
+                Executable { Assertions.assertNotNull(result1) },
+                Executable { Assertions.assertEquals(HttpStatus.OK, result1?.statusCode) }
+            	 
+        )
+		
+	}
+	
 	@Test
 	fun whenCalled_thenShouldReturnNotNullHrefAndUpdate() {
 		val headers = HttpHeaders()

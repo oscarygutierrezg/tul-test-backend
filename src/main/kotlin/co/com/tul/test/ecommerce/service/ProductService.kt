@@ -9,7 +9,9 @@ import java.util.UUID
 
 interface ProductService {
 
-    fun getAllProducts(): List<Product> 
+    fun getAllProducts(): List<Product>
+	
+    fun getBySku(sku: String): List<Product> 
 
     fun getProductById(productId: UUID): Product
 	

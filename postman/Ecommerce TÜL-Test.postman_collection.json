@@ -60,7 +60,84 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"nombre\": \"Tuercas\",\n    \"sku\": \"12345566\",\n    \"descripcion\": \"Test\",\n    \"precio\": 100,\n    \"tipoProducto\": \"WITHOUT_DISCOUNT\"\n}",
+					"raw": "{\n    \"descripcion\": \"Muy buenas\",\n    \"precio\": 100,\n    \"procentajeDescuento\": 50,\n    \"tipoProducto\": \"WITH_DISCOUNT\",\n    \"sku\": \"12345566\",\n    \"nombre\": \"Tuercas\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ecommerce/product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ecommerce",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"var href = jsonData.href",
+							"postman.setEnvironmentVariable(\"productId\", href.split('/')[5]);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 24793812-dcb1-4686-b516-0aa96289aba2",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "country",
+						"value": "CO",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Host",
+						"value": "plataforma-test.bancofalabella.com.co",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "channel",
+						"value": "PF",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Commerce",
+						"value": "Banco",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"descripcion\": \"Muy buenos\",\n    \"precio\": 101,\n    \"porcentajeDescuento\": 50,\n    \"tipoProducto\": \"WITH_DISCOUNT\",\n    \"sku\": \"12345566\",\n    \"nombre\": \"Tornillos\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -159,7 +236,7 @@
 			"response": []
 		},
 		{
-			"name": "GET product",
+			"name": "product",
 			"request": {
 				"method": "GET",
 				"header": [
@@ -215,7 +292,64 @@
 			"response": []
 		},
 		{
-			"name": "GET products",
+			"name": "producBySku",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 24793812-dcb1-4686-b516-0aa96289aba2",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "country",
+						"value": "CO",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Host",
+						"value": "plataforma-test.bancofalabella.com.co",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "channel",
+						"value": "PF",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Commerce",
+						"value": "Banco",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/ecommerce/product/sku/12345566",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ecommerce",
+						"product",
+						"sku",
+						"12345566"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "products",
 			"request": {
 				"method": "GET",
 				"header": [

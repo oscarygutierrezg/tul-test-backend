@@ -48,6 +48,20 @@ class ProductController(private val productService: ProductService) {
 		)])])
     @GetMapping("/product")
     fun getAllProducts() = productService.getAllProducts()
+	
+	
+	
+	@Operation(summary = "Obtiene todos los productos por sku")
+	@ApiResponses(value = [
+	ApiResponse(responseCode = "200", description = "Listado de productos", content = [
+	    (
+			Content(mediaType = MediaType.APPLICATION_JSON_VALUE,
+			array = ArraySchema(schema = Schema(implementation = ProductsDTO::class))
+			)
+		)])])
+    @GetMapping("/product/sku/{sku}")
+    fun getBySku(@Parameter(description = "Id del carrito de compras a buscar", example="RREWWERWRRRWE")@PathVariable("sku") sku: String): List<Product> = productService.getBySku(sku)
+
 
 	@Operation(summary = "Obtiene un producto dado el id")
 	@ApiResponses(value = [
@@ -127,7 +141,7 @@ class ProductController(private val productService: ProductService) {
 		)])]
 	 )
     @PutMapping("/product/{id}")
-    fun updateProductById(@Parameter(description = "Id del producto por actulizar", example="ced4e507-6fff-46f2-b722-59e497f30f05") @PathVariable("id") productId: UUID, @RequestBody payload: Product): ResponseEntity<Map<String,URI>>{
+    fun updateProductById(@Parameter(description = "Id del producto por actualizar", example="ced4e507-6fff-46f2-b722-59e497f30f05") @PathVariable("id") productId: UUID, @RequestBody payload: Product): ResponseEntity<Map<String,URI>>{
        productService.updateProductById(productId, payload)
        val location = ServletUriComponentsBuilder.fromCurrentRequest()
     			.buildAndExpand().toUri()

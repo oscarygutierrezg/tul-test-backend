@@ -22,6 +22,8 @@ data class ProductDTO (
     val descripcion: String,
 	@Schema(description = "Precio del producto de compras.", example = "100.0")	
     val precio: Double,
+    @Schema(description = "Precio del producto de compras.", example = "100.0")	
+	val porcentajeDescuento: Int,
 	@Schema(description = "TipoProducto del producto de compras.", example = "WITH_DISCOUNT")	
     val tipoProducto: ProductType,
     @Schema(description = "Links asociados a los recursos producto.")
