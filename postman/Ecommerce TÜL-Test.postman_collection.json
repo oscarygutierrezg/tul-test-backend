@@ -60,7 +60,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"descripcion\": \"Muy buenas\",\n    \"precio\": 100,\n    \"procentajeDescuento\": 50,\n    \"tipoProducto\": \"WITH_DISCOUNT\",\n    \"sku\": \"12345566\",\n    \"nombre\": \"Tuercas\"\n}",
+					"raw": "{\n    \"descripcion\": \"Muy buenas\",\n    \"precio\": 100,\n    \"procentajeDescuento\": 0,\n    \"tipoProducto\": \"WITHOUT_DISCOUNT\",\n    \"sku\": \"12345566\",\n    \"nombre\": \"Tuercas\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -68,12 +68,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/ecommerce/product",
+					"raw": "http://localhost:8081/ecommerce/product",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"ecommerce",
 						"product"
@@ -137,7 +137,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"descripcion\": \"Muy buenos\",\n    \"precio\": 101,\n    \"porcentajeDescuento\": 50,\n    \"tipoProducto\": \"WITH_DISCOUNT\",\n    \"sku\": \"12345566\",\n    \"nombre\": \"Tornillos\"\n}",
+					"raw": "{\n    \"descripcion\": \"Muy buenos\",\n    \"precio\": 101,\n    \"porcentajeDescuento\": 50,\n    \"tipoProducto\": \"WITH_DISCOUNT\",\n    \"sku\": \"erewwrdd\",\n    \"nombre\": \"Tornillos\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -145,12 +145,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/ecommerce/product",
+					"raw": "http://localhost:8081/ecommerce/product",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"ecommerce",
 						"product"
@@ -220,12 +220,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/ecommerce/product/{{productId}}",
+					"raw": "http://localhost:8081/ecommerce/product/{{productId}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"ecommerce",
 						"product",
@@ -276,12 +276,12 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/ecommerce/product/{{productId}}",
+					"raw": "http://localhost:8081/ecommerce/product/{{productId}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"ecommerce",
 						"product",
@@ -332,12 +332,12 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/ecommerce/product/sku/12345566",
+					"raw": "http://localhost:8081/ecommerce/product/sku/12345566",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"ecommerce",
 						"product",
@@ -389,12 +389,12 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/ecommerce/product",
+					"raw": "http://localhost:8081/ecommerce/product",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"ecommerce",
 						"product"
@@ -464,12 +464,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/ecommerce/product/{{productId}}",
+					"raw": "http://localhost:8081/ecommerce/product/{{productId}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"ecommerce",
 						"product",
@@ -542,12 +542,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/ecommerce/cart",
+					"raw": "http://localhost:8081/ecommerce/cart",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"ecommerce",
 						"cart"
@@ -619,12 +619,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/ecommerce/cart/{{cartId}}",
+					"raw": "http://localhost:8081/ecommerce/cart/{{cartId}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"ecommerce",
 						"cart",
@@ -675,12 +675,12 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/ecommerce/cart/{{cartId}}",
+					"raw": "http://localhost:8081/ecommerce/cart/{{cartId}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"ecommerce",
 						"cart",
@@ -731,12 +731,12 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/ecommerce/cart",
+					"raw": "http://localhost:8081/ecommerce/cart",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"ecommerce",
 						"cart"
@@ -808,12 +808,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/ecommerce/cart/{{cartId}}",
+					"raw": "http://localhost:8081/ecommerce/cart/{{cartId}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"ecommerce",
 						"cart",
@@ -873,12 +873,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/ecommerce/productCart",
+					"raw": "http://localhost:8081/ecommerce/productCart",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"ecommerce",
 						"productCart"
@@ -937,12 +937,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/ecommerce/productCart",
+					"raw": "http://localhost:8081/ecommerce/productCart",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"ecommerce",
 						"productCart"
@@ -992,12 +992,12 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/ecommerce/productCart/{{productId}}/{{cartId}}",
+					"raw": "http://localhost:8081/ecommerce/productCart/{{productId}}/{{cartId}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"ecommerce",
 						"productCart",
@@ -1049,12 +1049,12 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/ecommerce/productCartByProduct/{{productId}}",
+					"raw": "http://localhost:8081/ecommerce/productCartByProduct/{{productId}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"ecommerce",
 						"productCartByProduct",
@@ -1105,12 +1105,12 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/ecommerce/productCartByCart/{{cartId}}",
+					"raw": "http://localhost:8081/ecommerce/productCartByCart/{{cartId}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"ecommerce",
 						"productCartByCart",
@@ -1161,12 +1161,12 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/ecommerce/productCart/{{productId}}/{{cartId}}",
+					"raw": "http://localhost:8081/ecommerce/productCart/{{productId}}/{{cartId}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8081",
 					"path": [
 						"ecommerce",
 						"productCart",
